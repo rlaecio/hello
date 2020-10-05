@@ -1,8 +1,14 @@
 package main
 
-import "fmt" // interaçao com strings
-import "os" // interaçao com o sistema operativo
-import "net/http" // interaçao com a web
+import (
+	"time"
+	"fmt" // interaçao com strings
+	"os" // interaçao com o sistema operativo
+	"net/http" // interaçao com a web
+)
+
+const monitoramentos = 3
+const delay = 5
 
 
 func main() {
@@ -53,15 +59,30 @@ func leComando() int {
 
 func iniciarMonitoramento()  {
 	fmt.Println("Monitorando...")
-	site := "https://www.alura.com.br"
 	
-	resp, _ := http.Get(site)
-	fmt.Println(resp)
+	sites := []string{"https://www.alura.com.br",
+		"https://caelum.com.br", "https://random-status-code.herokuapp.com/"}
+	
+	// for i := 0; i < len(sites); i++ {
+	// 	   fmt.Println(sites[i])
+	// }
+	for i:= 0; i < monitoramentos; i++ {
+		for i, site := range(sites) {
+			fmt.Println("Posiçao", i, "Testando site:", site)
+			testaSite(site)
+		}
+		time.Sleep( delay * time.Second)
+		fmt.Println()
+	}
+	fmt.Println()
+}
 
+func testaSite(site string)  {
+	resp, _ := http.Get(site)
+	
 	if resp.StatusCode == 200 {
         fmt.Println("Site:", site, "foi carregado com sucesso!")
     } else {
         fmt.Println("Site:", site, "está com problemas. Status Code:", resp.StatusCode)
     }
-
 }
