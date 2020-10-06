@@ -1,0 +1,9 @@
+06/10/2020 02:22:04 - https://www.alura.com.br  -- online: true
+06/10/2020 02:22:05 - https://caelum.com.br  -- online: true
+06/10/2020 02:22:06 - https://random-status-code.herokuapp.com  -- online: true
+06/10/2020 02:22:11 - https://www.alura.com.br  -- online: true
+06/10/2020 02:22:12 - https://caelum.com.br  -- online: true
+06/10/2020 02:22:13 - https://random-status-code.herokuapp.com  -- online: true
+06/10/2020 02:22:18 - https://www.alura.com.br  -- online: true
+06/10/2020 02:22:18 - https://caelum.com.br  -- online: true
+06/10/2020 02:22:19 - https://random-status-code.herokuapp.com  -- online: false
